@@ -1,0 +1,27 @@
+name: Auto Unzip Release
+
+on:
+  push:
+    paths:
+    - '*.zip' # Se activează când urci un fișier zip în root
+
+jobs:
+  unzip:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Extract zip files
+        run: |
+          for f in *.zip; do
+            if [ -f "$f" ]; then
+              echo "Extracting $f..."
+              unzip -o "$f" -d extracted_files/
+            fi
+          done
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Auto-unzip uploaded archive"
