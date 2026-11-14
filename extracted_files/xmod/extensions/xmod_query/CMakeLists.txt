@@ -1,0 +1,6 @@
+xmod_extension(xmod_query query.cpp config.cpp net.cpp http.cpp db_sqlite.cpp db_mysql.cpp third_party/sqlite3.c)
+target_include_directories(xmod_query PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_compile_definitions(xmod_query PRIVATE SQLITE_THREADSAFE=1 SQLITE_OMIT_LOAD_EXTENSION SQLITE_DEFAULT_MEMSTATUS=0 SQLITE_OMIT_DEPRECATED SQLITE_OMIT_SHARED_CACHE)
+if(WIN32)
+  target_link_libraries(xmod_query ws2_32 winhttp)
+endif()

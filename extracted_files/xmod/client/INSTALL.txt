@@ -1,0 +1,31 @@
+NEXUS CLIENT 2.0 - for players (optional: servers running xmod work without it, you just don't see the Nexus HUDs/effects)
+
+INSTALL
+  1. Go to your game folder: ...\Half-Life\cstrike\cl_dlls  (Steam: right-click Half-Life > Manage > Browse local files)
+  2. Turn on "View > File name extensions" in Windows Explorer.
+  3. Rename the game's  client.dll  to  client_orig.dll      (Linux: client.so -> client_orig.so)
+  4. Copy  cstrike\cl_dlls\client.dll  from this folder into  cl_dlls   (Linux: client.so)
+  5. Start the game and type  nexus_info  in the console.
+
+IF THE GAME DOES NOT START
+  Open cl_dlls\nexus_load.log - it lists every step and the exact problem (missing client_orig.dll, a .dll.dll name,
+  a Windows error code, or the last step reached before a crash).
+
+UNDO
+  Delete the Nexus client.dll and rename client_orig.dll back to client.dll  (or Steam: Properties > Installed Files >
+  Verify integrity of game files). After a game update replaced client.dll, rename the new one again and put Nexus back.
+
+YOUR SETTINGS (console)
+  nexus_enable 0/1      everything off / on          nexus_scale 1        size of Nexus HUDs (0.5 - 3)
+  nexus_keys 0          never report your keys       nexus_urls 0         never show "open this link?" prompts
+  nexus_cursor_speed 1  mouse cursor speed
+
+WHAT A SERVER CAN AND CANNOT DO
+  Can: draw HUDs and menus, show a mouse cursor, read the keys it asked for (never ESC or the console key, never what you type in chat),
+  move your camera / zoom / shake your view, block or change your movement keys while its feature runs, change how models look
+  for you, draw shapes, lights and particles, play sounds and music, ask you to open an https link (only Y opens it).
+  Cannot: run console commands, change your cvars, read or write your files, install or enable client plugins, open links by itself.
+  Client plugins load only from cstrike\nexus\plugins listed in cstrike\nexus\plugins.ini, which only you edit.
+
+NOTE: Nexus uses only the game's public client interface (no memory patching), but nobody can promise how VAC treats a
+replaced client.dll. Install it at your own risk.
