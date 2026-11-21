@@ -1,0 +1,7 @@
+deps/
+build/
+build-win/
+test/gd/
+test/mock
+test/mock_codex
+build-zig/

@@ -1,0 +1,31 @@
+xmod 0.4.1 - instalare rapida
+==============================
+
+1. Copiaza folderul addons/xmod in cstrike/addons/ (peste 0.4.0: pastreaza-ti configs/users.ini, plugins.ini si data/).
+2. In cstrike/addons/metamod/plugins.ini:
+     linux addons/xmod/dlls/xmod_mm_i386.so        (server Linux)
+     win32 addons/xmod/dlls/xmod_mm.dll            (Windows / listen server)
+3. Restart. In consola: xmod version  -> trebuie sa scrie 0.4.1.
+
+Ce e nou fata de 0.4.0
+----------------------
+- core: fire_hook_sync / has_handlers in API-ul de extensii (de asta are nevoie Codex pentru hook-uri complete).
+- lib/metalog.lua   - sistem de debug + log in fisiere .md (data/logs/). In capul fisierului:
+                      enabled = false  -> toate functiile metalog devin functii goale (si cele facute cu log:fn()).
+                      Consola: metalog status | metalog tail <nume> | metalog level <nume> <nivel> | metalog help
+- lib/translator.lua - multi-limba. Dictionare in lang/<nume>.txt, acelasi format ca AMXX data/lang/*.txt.
+                      say /lang (meniu), xmod_lang ro, cvar xmod_language (limba serverului).
+- lang/common.txt   - texte comune (Da/Nu/Inapoi...) in en ro es de fr pt ru pl tr.
+- data/logs/        - NU sterge folderul (xmod nu poate crea foldere; fara el logurile merg in data/logs_*.md).
+- demo: examples/metalog_demo.lua, examples/translator_demo.lua (de activat in configs/plugins.ini).
+
+Codex
+-----
+Pachetul asta are deja tot ce tine de Lua pentru Codex: lib/codex.lua, plugins/codex_tools.lua (activ, nu face nimic
+fara extensie), examples/codex_demo.lua si linia "codex" in configs/extensions.ini.
+Ca sa instalezi Codex: din xmod_codex_1.0.1.zip copiezi addons/xmod/dlls/xmod_codex_mm.dll / xmod_codex_mm_i386.so
+si adaugi DUPA linia xmod in metamod/plugins.ini:
+     linux addons/xmod/dlls/xmod_codex_mm_i386.so
+     win32 addons/xmod/dlls/xmod_codex_mm.dll
+
+Pentru AI: xmod_skills.md (radacina pachetului) contine tot API-ul, inclusiv metalog si translator (Part I-b).

@@ -1,0 +1,210 @@
+; xmod common dictionary (lib/translator.lua loads it as T.common). AMX Mod X dictionary format:
+;   [code]  then  KEY = text     ^n = new line, ^t = tab, chat colours {g} {y} {t} or ^1 ^3 ^4, %s %d = arguments
+; Romanian is written without diacritics on purpose (what most CS 1.6 players use).
+
+[en]
+YES = Yes
+NO = No
+ON = On
+OFF = Off
+ENABLED = Enabled
+DISABLED = Disabled
+BACK = Back
+NEXT = Next
+EXIT = Exit
+CLOSE = Close
+SECONDS = seconds
+MINUTES = minutes
+PLAYER = Player
+ADMIN = Admin
+NO_ACCESS = You have no access to that command.
+NOT_FOUND = Not found.
+TR_MENU_TITLE = Choose your language
+TR_CHANGED = {g}[lang] {y}Language: {t}%s
+TR_CURRENT = Your language: %s (%s)
+TR_DISABLED = {g}[lang] {y}Changing the language is disabled on this server.
+TR_UNKNOWN = Unknown language code: %s
+
+[ro]
+YES = Da
+NO = Nu
+ON = Pornit
+OFF = Oprit
+ENABLED = Activat
+DISABLED = Dezactivat
+BACK = Inapoi
+NEXT = Inainte
+EXIT = Iesire
+CLOSE = Inchide
+SECONDS = secunde
+MINUTES = minute
+PLAYER = Jucator
+ADMIN = Admin
+NO_ACCESS = Nu ai acces la aceasta comanda.
+NOT_FOUND = Nu a fost gasit.
+TR_MENU_TITLE = Alege limba
+TR_CHANGED = {g}[lang] {y}Limba: {t}%s
+TR_CURRENT = Limba ta: %s (%s)
+TR_DISABLED = {g}[lang] {y}Schimbarea limbii este dezactivata pe acest server.
+TR_UNKNOWN = Cod de limba necunoscut: %s
+
+[es]
+YES = Sí
+NO = No
+ON = Activado
+OFF = Desactivado
+ENABLED = Habilitado
+DISABLED = Deshabilitado
+BACK = Atrás
+NEXT = Siguiente
+EXIT = Salir
+CLOSE = Cerrar
+SECONDS = segundos
+MINUTES = minutos
+PLAYER = Jugador
+ADMIN = Admin
+NO_ACCESS = No tienes acceso a ese comando.
+NOT_FOUND = No encontrado.
+TR_MENU_TITLE = Elige tu idioma
+TR_CHANGED = {g}[lang] {y}Idioma: {t}%s
+TR_CURRENT = Tu idioma: %s (%s)
+TR_DISABLED = {g}[lang] {y}Cambiar el idioma está desactivado en este servidor.
+TR_UNKNOWN = Código de idioma desconocido: %s
+
+[de]
+YES = Ja
+NO = Nein
+ON = An
+OFF = Aus
+ENABLED = Aktiviert
+DISABLED = Deaktiviert
+BACK = Zurück
+NEXT = Weiter
+EXIT = Beenden
+CLOSE = Schließen
+SECONDS = Sekunden
+MINUTES = Minuten
+PLAYER = Spieler
+ADMIN = Admin
+NO_ACCESS = Du hast keinen Zugriff auf diesen Befehl.
+NOT_FOUND = Nicht gefunden.
+TR_MENU_TITLE = Wähle deine Sprache
+TR_CHANGED = {g}[lang] {y}Sprache: {t}%s
+TR_CURRENT = Deine Sprache: %s (%s)
+TR_DISABLED = {g}[lang] {y}Das Ändern der Sprache ist auf diesem Server deaktiviert.
+TR_UNKNOWN = Unbekannter Sprachcode: %s
+
+[fr]
+YES = Oui
+NO = Non
+ON = Activé
+OFF = Désactivé
+ENABLED = Activé
+DISABLED = Désactivé
+BACK = Retour
+NEXT = Suivant
+EXIT = Quitter
+CLOSE = Fermer
+SECONDS = secondes
+MINUTES = minutes
+PLAYER = Joueur
+ADMIN = Admin
+NO_ACCESS = Vous n'avez pas accès à cette commande.
+NOT_FOUND = Introuvable.
+TR_MENU_TITLE = Choisissez votre langue
+TR_CHANGED = {g}[lang] {y}Langue : {t}%s
+TR_CURRENT = Votre langue : %s (%s)
+TR_DISABLED = {g}[lang] {y}Le changement de langue est désactivé sur ce serveur.
+TR_UNKNOWN = Code de langue inconnu : %s
+
+[pt]
+YES = Sim
+NO = Não
+ON = Ligado
+OFF = Desligado
+ENABLED = Ativado
+DISABLED = Desativado
+BACK = Voltar
+NEXT = Próximo
+EXIT = Sair
+CLOSE = Fechar
+SECONDS = segundos
+MINUTES = minutos
+PLAYER = Jogador
+ADMIN = Admin
+NO_ACCESS = Você não tem acesso a esse comando.
+NOT_FOUND = Não encontrado.
+TR_MENU_TITLE = Escolha o seu idioma
+TR_CHANGED = {g}[lang] {y}Idioma: {t}%s
+TR_CURRENT = Seu idioma: %s (%s)
+TR_DISABLED = {g}[lang] {y}A troca de idioma está desativada neste servidor.
+TR_UNKNOWN = Código de idioma desconhecido: %s
+
+[ru]
+YES = Да
+NO = Нет
+ON = Вкл
+OFF = Выкл
+ENABLED = Включено
+DISABLED = Выключено
+BACK = Назад
+NEXT = Далее
+EXIT = Выход
+CLOSE = Закрыть
+SECONDS = секунд
+MINUTES = минут
+PLAYER = Игрок
+ADMIN = Админ
+NO_ACCESS = У вас нет доступа к этой команде.
+NOT_FOUND = Не найдено.
+TR_MENU_TITLE = Выберите язык
+TR_CHANGED = {g}[lang] {y}Язык: {t}%s
+TR_CURRENT = Ваш язык: %s (%s)
+TR_DISABLED = {g}[lang] {y}Смена языка на этом сервере отключена.
+TR_UNKNOWN = Неизвестный код языка: %s
+
+[pl]
+YES = Tak
+NO = Nie
+ON = Wł.
+OFF = Wył.
+ENABLED = Włączone
+DISABLED = Wyłączone
+BACK = Wstecz
+NEXT = Dalej
+EXIT = Wyjście
+CLOSE = Zamknij
+SECONDS = sekund
+MINUTES = minut
+PLAYER = Gracz
+ADMIN = Admin
+NO_ACCESS = Nie masz dostępu do tej komendy.
+NOT_FOUND = Nie znaleziono.
+TR_MENU_TITLE = Wybierz język
+TR_CHANGED = {g}[lang] {y}Język: {t}%s
+TR_CURRENT = Twój język: %s (%s)
+TR_DISABLED = {g}[lang] {y}Zmiana języka jest wyłączona na tym serwerze.
+TR_UNKNOWN = Nieznany kod języka: %s
+
+[tr]
+YES = Evet
+NO = Hayır
+ON = Açık
+OFF = Kapalı
+ENABLED = Etkin
+DISABLED = Devre dışı
+BACK = Geri
+NEXT = İleri
+EXIT = Çıkış
+CLOSE = Kapat
+SECONDS = saniye
+MINUTES = dakika
+PLAYER = Oyuncu
+ADMIN = Admin
+NO_ACCESS = Bu komuta erişimin yok.
+NOT_FOUND = Bulunamadı.
+TR_MENU_TITLE = Dilini seç
+TR_CHANGED = {g}[lang] {y}Dil: {t}%s
+TR_CURRENT = Dilin: %s (%s)
+TR_DISABLED = {g}[lang] {y}Bu sunucuda dil değiştirme kapalı.
+TR_UNKNOWN = Bilinmeyen dil kodu: %s

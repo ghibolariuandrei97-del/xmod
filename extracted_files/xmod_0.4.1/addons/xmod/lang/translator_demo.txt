@@ -1,0 +1,17 @@
+; dictionary of plugins/examples/translator_demo.lua  (AMX Mod X format: copy AMXX data/lang/*.txt files as they are)
+[en]
+DEMO_WELCOME = {g}[demo] {y}Welcome, {t}%s{y}! Type {g}/lang{y} to change the language.
+DEMO_HP = {g}[demo] {y}You have {t}%d{y} HP.
+DEMO_KILLS_ONE = {g}[demo] {y}You have {t}%d{y} kill.
+DEMO_KILLS = {g}[demo] {y}You have {t}%d{y} kills.
+DEMO_NAMED = {g}[demo] {y}{name} is on team {team}.
+DEMO_HUD = Round started^nGood luck!
+
+[ro]
+DEMO_WELCOME = {g}[demo] {y}Bine ai venit, {t}%s{y}! Scrie {g}/lang{y} ca sa schimbi limba.
+DEMO_HP = {g}[demo] {y}Ai {t}%d{y} HP.
+DEMO_KILLS_ONE = {g}[demo] {y}Ai {t}%d{y} kill.
+DEMO_KILLS_FEW = {g}[demo] {y}Ai {t}%d{y} kill-uri.
+DEMO_KILLS_MANY = {g}[demo] {y}Ai {t}%d{y} de kill-uri.
+DEMO_NAMED = {g}[demo] {y}{name} este in echipa {team}.
+DEMO_HUD = Runda a inceput^nSucces!
