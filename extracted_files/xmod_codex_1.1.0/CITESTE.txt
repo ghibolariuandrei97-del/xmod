@@ -1,0 +1,40 @@
+CODEX 1.1.0 - extensie xmod (doar Codex)
+========================================
+
+README.md        - manualul (engleza)
+codex_skills.md  - totul despre Codex, pentru AI (da-l impreuna cu xmod_skills.md cand scrii pluginuri)
+
+INSTALARE (nu editezi niciun fisier de config al tau)
+1. Copiaza addons/ peste cstrike/addons/ - doar adauga fisiere:
+     xmod/dlls/xmod_codex_mm.dll  +  xmod/dlls/xmod_codex_mm_i386.so
+     xmod/lib/codex.lua                 (libraria: local cx = require("codex"))
+     xmod/plugins/codex_tools.lua       (comanda "codex" in consola serverului)
+     xmod/plugins/examples/codex_demo.lua
+     xmod/configs/extensions-codex.ini  (declara xmod.codex)
+     xmod/configs/plugins-codex.ini     (incarca codex_tools.lua; demo-ul e comentat acolo)
+2. addons/metamod/plugins.ini, DUPA linia xmod:
+       win32 addons/xmod/dlls/xmod_codex_mm.dll
+       linux addons/xmod/dlls/xmod_codex_mm_i386.so
+3. Restart -> in consola: codex status
+
+Cere xmod 0.4.2 (citeste configs/*-codex.ini). Cu xmod 0.4.1 merge si el, dar adaugi de mana
+"codex" in configs/extensions.ini si "codex_tools.lua" in configs/plugins.ini.
+
+NOU in 1.1.0 (inspirat din Okapi)
+- codex.callees(f)   - ce functii cheama f (direct, prin PLT/GOT/import, apeluri virtuale cu indexul din vtable)
+- codex.callers(f)   - cine o cheama pe f (si pointeri spre ea: vtable, callback-uri cu {refs = true})
+- codex.calltree(f, {depth = 2, dir = "down"|"up"}) - arborele de apeluri
+- codex.analyze(f)   - marime, instructiuni, string-urile si constantele pe care le foloseste
+- codex.treemap(f) / codex.treemap_find(modul, harta) - amprenta functiei + a celor pe care le cheama (ca Okapi);
+  o gasesti din nou dupa update chiar daca semnatura nu mai merge
+- in codex.func: callee = {of = "X", index = 2}, caller = "Y", treemap = "cx1:..."
+- cx.find_func{strings=, calls=, called_by=, consts=} si find = {...} in gamedata (cx.define)
+- codex.find_value / codex.replace_value (ca okapi_find_* / okapi_replace_*, dar reversibil), codex.symbol_at, cx.wl
+- cx.report / cx.check (mutate din metalog), cx.dump(nil, true, {treemap = true})
+- consola: codex callees | callers | tree | analyze | treemap | tmfind | symat | findval | report
+- reparat: amprenta build-ului (cheia din cache) se calcula cu hook-urile active -> acum din bytes originali;
+  lista de module nu mai invalideaza pointerii la refresh
+
+TESTAT: self-test 182/182 pe Linux; pe cs.so real: callees identice la 99.8% din 4608 functii, callers fara niciun
+apelant ratat; pe mp.dll real toate legaturile regasite; treemap: 98% gaseste functia pe locul 1.
+NETESTAT: pe un Windows real, pe un HLDS real cu jucatori, si treemap intre doua versiuni diferite ale jocului.
