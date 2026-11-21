@@ -1,0 +1,33 @@
+CODEX 1.0.1 - extensie xmod (doar Codex)
+========================================
+
+README.md        - manualul (engleza)
+codex_skills.md  - totul despre Codex, pentru AI (da-l lui Claude impreuna cu xmod_skills.md cand scrii pluginuri)
+
+INSTALARE
+1. Copiaza addons/xmod/* peste cstrike/addons/xmod/
+     dlls/xmod_codex_mm.dll  +  dlls/xmod_codex_mm_i386.so
+     lib/codex.lua                     (libraria: local cx = require("codex"))
+     plugins/codex_tools.lua           (comanda "codex" in consola serverului)
+     plugins/examples/codex_demo.lua   (demo)
+2. addons/metamod/plugins.ini, DUPA linia xmod:
+       win32 addons/xmod/dlls/xmod_codex_mm.dll
+       linux addons/xmod/dlls/xmod_codex_mm_i386.so
+3. addons/xmod/configs/extensions.ini:  codex
+4. addons/xmod/configs/plugins.ini:     codex_tools.lua   (si optional examples/codex_demo.lua)
+5. Restart -> in consola: codex status
+
+IMPORTANT: hook-urile complete (schimbat argumente / return / supercede) au nevoie de xmod 0.4.1
+(core-ul din arhiva anterioara xmod_codex_1.0.0.zip). Cu xmod 0.4.0 restul merge, dar hook-urile doar observa.
+
+NOU in 1.0.1
+- lib/codex.lua: cx.ready, cx.define (gamedata), cx.try/cx.call, cx.hook, cx.limit/cx.patch cu :restore(),
+  cx.pdata/cx.fields (offseturi ca in AMXX), cx.dump (semnaturi pentru build-ul tau)
+- tipurile "astring" si "string_t": pentru string-uri pe care jocul le pastreaza (classname, model);
+  un "string" simplu e valid doar in timpul apelului (demo-ul GiveNamedItem foloseste acum astring)
+- stack overflow (recursie infinita) intr-un apel e prins si pe Linux (si a doua oara la rand); pe Windows
+  pagina de garda a stivei e refacuta dupa o depasire prinsa
+- set_ret cu un Vector nou este refuzat (ar fi pointat in memorie eliberata)
+
+TESTAT: self-test 146/146 pe Linux; binare reale cs.so/mp.dll/engine/swds (fara trampoline gresite).
+NETESTAT: pe un Windows real (Wine nu merge la mine) si pe un HLDS real cu jucatori.
