@@ -1,0 +1,2 @@
+SQLite (sqlite3.c / sqlite3.h, version 3.38.2) is in the public domain: https://www.sqlite.org/copyright.html
+The files come from the "sqlite-amalgamation" mirror on GitHub (azadkuh/sqlite-amalgamation; MIRROR_LICENSE.txt covers its build scripts).
