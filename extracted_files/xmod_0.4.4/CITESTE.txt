@@ -1,0 +1,38 @@
+xmod 0.4.4 - instalare rapida
+==============================
+
+1. Copiaza folderul addons/xmod in cstrike/addons/ (peste o versiune mai veche: pastreaza-ti configs/users.ini,
+   configs/plugins.ini si data/).
+2. In cstrike/addons/metamod/plugins.ini:
+     linux addons/xmod/dlls/xmod_mm_i386.so        (server Linux)
+     win32 addons/xmod/dlls/xmod_mm.dll            (Windows / listen server)
+3. Restart. In consola: xmod version  -> 0.4.4
+
+Pachetul contine doar xmod (core, pluginurile de baza, librariile, xmod_query, Nexus). Nicio extensie optionala:
+Codex (xmod_codex_1.1.0.zip) si XZombie (xzombie_1.0.1.zip) se instaleaza separat.
+
+Nou in 0.4.4
+------------
+- precache mult mai rapid (nu mai citeste fisierul intreg): nu mai da "script timeout" la multe precache-uri.
+
+Nou in 0.4.3
+------------
+- xmod.player.strip_weapons(id) si campurile viewmodel / weaponmodel (gheare de zombi, cutite custom).
+  De ele are nevoie XZombie.
+
+Nou in 0.4.2
+------------
+- configs/plugins-*.ini si configs/extensions-*.ini sunt citite dupa plugins.ini / extensions.ini (ca plugins-*.ini
+  din AMXX). O extensie isi aduce propriul fisier, deci la instalare nu mai editezi fisierele tale.
+- timpul petrecut in codul nativ al unei extensii nu se mai numara la xmod_script_timeout (100 ms).
+- metalog nu mai are functii pentru Codex (sunt acum in lib/codex.lua din pachetul Codex: cx.report / cx.check).
+
+Din 0.4.1
+---------
+- lib/metalog.lua   - debug + loguri .md in data/logs/. enabled = false in capul fisierului -> toate functiile goale.
+                      Consola: metalog status | metalog tail <nume> | metalog level <nume> <nivel> | metalog help
+- lib/translator.lua - multi-limba: lang/<nume>.txt (format AMXX), say /lang, xmod_lang ro, cvar xmod_language.
+- data/logs/        - NU sterge folderul (xmod nu poate crea foldere).
+- demo: examples/metalog_demo.lua, examples/translator_demo.lua (de activat in configs/plugins.ini).
+
+Pentru AI: xmod_skills.md (radacina pachetului) - tot API-ul xmod, inclusiv metalog si translator.

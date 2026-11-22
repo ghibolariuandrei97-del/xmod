@@ -1,0 +1,10 @@
+deps/
+build/
+build-win/
+test/gd/
+test/mock
+test/mock_codex
+build-zig/
+addons/xmod/data/logs/*_*.md
+addons/xmod/data/vaults/
+addons/xmod/data/*.log
