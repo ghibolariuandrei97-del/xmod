@@ -1,0 +1,15 @@
+{
+  "_readme": "Registry for xcmd (put this file in the root of the xmod GitHub repository). Every package here overrides what xcmd detects from the file names. Fields: name, title, version, kind (core|extension|mod|plugin), description, tags, file (path in the repo) or url, requires, metamod (dll base names), namespace (extension namespace), plugins (lines for configs/plugins-<name>.ini when the zip has none), order.",
+  "packages": [
+    { "name": "xmod", "title": "xmod core", "version": "0.4.4", "file": "xmod_0.4.4.zip" },
+    { "name": "codex", "version": "1.1.0", "file": "xmod_codex_1.1.0.zip" },
+    { "name": "xbot", "title": "xbots", "version": "1.0.3", "file": "xmod_bots_1.0.3.zip", "namespace": "bot" },
+    { "name": "modcreator", "title": "ModCreator", "version": "1.0.0", "file": "modCreator.zip" },
+    { "name": "war3", "title": "Warcraft 3 FT", "kind": "plugin", "version": "1.0", "file": "war3.lua",
+      "description": "Warcraft 3 races, skills and levels for CS 1.6 (single xmod plugin).", "tags": ["rpg", "war3"], "requires": ["xmod"] },
+    { "name": "xzombie", "title": "XZombie", "kind": "mod", "version": "1.0.1", "file": "xzombie_1.0.1.zip",
+      "description": "Zombie mod with Nexus HUD, Nemesis mode and effects.", "tags": ["zombie"], "requires": ["xmod"] },
+    { "name": "dronerush", "title": "Drone Rush", "kind": "mod", "version": "1.0", "file": "drone_rush_1.0.zip",
+      "description": "Drone waves built with ModCreator.", "tags": ["npc", "waves"], "requires": ["xmod", "modcreator"] }
+  ]
+}

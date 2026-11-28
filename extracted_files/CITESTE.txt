@@ -1,0 +1,57 @@
+xcmd 1.1.0 - SteamCMD pentru xmod
+==================================
+
+Un singur program (fara nimic de instalat):
+  xcmd.exe      Windows (merge si pe 32 si pe 64 bit)
+  xcmd          Linux 64-bit        (chmod +x xcmd)
+  xcmd-i386     Linux 32-bit
+
+PORNIRE
+  Dublu click pe xcmd.exe (sau "xcmd" in terminal) -> aplicatia completa:
+  Home · Monitor · Map · Mods · Browser   (tab sau 1-5 schimba ecranul, q iese)
+  Pe Windows arata cel mai bine in Windows Terminal; merge si in cmd clasic.
+
+PACHETE PENTRU SERVER (fara Steam, totul de pe GitHub)
+  Alegi ce vrei si folderul unde le pune xcmd; apoi urci continutul folderului pe server prin FTP.
+    xcmd setup xmod      --dir D:\upload --zip    doar xmod (serverul are deja Metamod)
+    xcmd setup metamod   --dir D:\upload --zip    xmod + Metamod-R
+    xcmd setup regamedll --dir D:\upload --zip    xmod + Metamod-R + ReGameDLL (hook-urile xmod.reapi)
+    xcmd setup rehlds    --dir D:\upload --zip    xmod + Metamod-R + ReGameDLL + ReHLDS
+    xcmd setup all       --dir D:\upload --zip    tot + Codex, ModCreator, xbots, query
+  Sau din aplicatie: Home -> f (schimbi folderul) -> a..e (profilul).
+  --zip face D:\upload_upload.zip; in folder gasesti XCMD_UPLOAD.txt cu ce trebuie urcat si liniile pentru server.
+  --os linux / --os windows daca vrei doar fisierele pentru un singur sistem (implicit: ambele).
+
+UPDATE
+  xcmd update --dir D:\upload --zip   -> D:\upload_update_<data>.zip cu DOAR fisierele schimbate; il urci si gata.
+  Config-urile tale nu sunt suprascrise niciodata.
+  (HLDS complet prin SteamCMD doar daca il ceri: xcmd install hlds --dir ...)
+
+MODURI ("npm pentru xmod")
+  xcmd search                 tot ce e in git-ul tau + ReHLDS/ReGameDLL/Metamod
+  xcmd install modcreator     dependintele vin singure (un mod cu require("modcreator") aduce ModCreator)
+  xcmd install war3
+  xcmd disable codex / xcmd enable codex / xcmd remove xbot
+  xcmd update                 tot la ultima versiune, config-urile tale raman neatinse
+  xcmd list                   ce ai instalat
+
+  Fisierele se iau din github.com/ghibolariuandrei97-del/xmod. Pune xcmd.json (din arhiva asta) in radacina
+  repo-ului: acolo scrii nume, descrieri, versiuni si dependinte. Un mod din xcmd.json apare in librarie doar
+  dupa ce urci si fisierul lui (ex. xzombie_1.0.1.zip, drone_rush_1.0.zip).
+
+LIVE
+  xcmd monitor                  ca htop: jucatori, bani, HP, arme, K/D, ping, fps server, CPU, RAM, grafice
+  xcmd monitor 1.2.3.4:27015 --rcon PAROLA     un server de pe alt PC
+  xcmd map                      harta tactica live (ca HLTV, in terminal): jucatori, conuri de vedere, panouri CT/T, kill feed
+  xcmd browser                  toate serverele de CS 1.6 din lume care ruleaza xmod
+
+  Harta se deseneaza din fisierul .bsp al hartii. Pentru un server la distanta, arata-i xcmd unde ai hartile
+  din jocul tau CS 1.6:  xcmd map --maps "C:\Games\Counter-Strike 1.6\cstrike\maps"   (se tine minte)
+  Liniile "Rcon from ..." din consola: pe ReHLDS pui sv_rcon_condebug 0 in server.cfg.
+
+  Agentul xcmd (plugin mic, instalat de setup) da datele live. Pe acelasi PC cu serverul merge fara rcon;
+  pentru un server la distanta pune parola rcon (in Monitor apasa p). Harta se deseneaza din maps/<harta>.bsp.
+
+ALTELE
+  xcmd doctor    verifica PC-ul si serverul (librarii 32-bit pe Linux, Metamod, xmod, fisiere lipsa)
+  xcmd help      toate comenzile
